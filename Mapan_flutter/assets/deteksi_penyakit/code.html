@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+
+<html class="light" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Mapan - Deteksi Penyakit</title>
+<!-- Tailwind CSS with specific configuration -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-container": "#6cf8bb",
+                        "inverse-on-surface": "#ecf2ec",
+                        "on-primary-container": "#f5fff7",
+                        "surface-tint": "#006c4a",
+                        "on-tertiary-container": "#fffbff",
+                        "outline-variant": "#bccac0",
+                        "secondary": "#006c49",
+                        "on-error-container": "#93000a",
+                        "surface": "#ffffff",
+                        "on-surface-variant": "#3d4a42",
+                        "surface-container": "#e9efe9",
+                        "tertiary": "#9b3e3b",
+                        "primary-container": "#00855d",
+                        "surface-container-high": "#e4eae4",
+                        "on-primary-fixed-variant": "#005137",
+                        "primary": "#006948",
+                        "error": "#ba1a1a",
+                        "surface-bright": "#f5fbf5",
+                        "on-primary-fixed": "#002114",
+                        "on-error": "#ffffff",
+                        "on-tertiary-fixed-variant": "#7f2928",
+                        "inverse-primary": "#68dba9",
+                        "chart-primary": "#059669",
+                        "on-secondary-fixed-variant": "#005236",
+                        "chart-secondary": "#34d399",
+                        "background": "#f8fafc",
+                        "on-secondary-container": "#00714d",
+                        "primary-fixed-dim": "#68dba9",
+                        "surface-variant": "#dee4de",
+                        "surface-container-low": "#eff5ef",
+                        "secondary-fixed": "#6ffbbe",
+                        "surface-dim": "#d5dcd6",
+                        "on-surface": "#171d19",
+                        "on-secondary-fixed": "#002113",
+                        "outline": "#6d7a72",
+                        "on-secondary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "destructive": "#dc2626",
+                        "border": "#e2e8f0",
+                        "tertiary-container": "#ba5551",
+                        "on-tertiary": "#ffffff",
+                        "muted": "#64748b",
+                        "tertiary-fixed-dim": "#ffb3ae",
+                        "on-background": "#171d19",
+                        "on-tertiary-fixed": "#410004",
+                        "surface-container-highest": "#dee4de",
+                        "primary-fixed": "#85f8c4",
+                        "inverse-surface": "#2c322e",
+                        "secondary-fixed-dim": "#4edea3",
+                        "on-primary": "#ffffff",
+                        "tertiary-fixed": "#ffdad7",
+                        "error-container": "#ffdad6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "1.5rem",
+                        "sidebar-width": "280px",
+                        "stack-sm": "0.5rem",
+                        "stack-lg": "2rem",
+                        "container-max": "1440px",
+                        "margin-page": "2rem",
+                        "stack-md": "1rem"
+                    },
+                    "fontFamily": {
+                        "h1": ["Manrope", "sans-serif"],
+                        "body-sm": ["Inter", "sans-serif"],
+                        "label-md": ["Inter", "sans-serif"],
+                        "h3": ["Manrope", "sans-serif"],
+                        "h2": ["Manrope", "sans-serif"],
+                        "body-base": ["Inter", "sans-serif"],
+                        "label-xs": ["Inter", "sans-serif"]
+                    },
+                    "fontSize": {
+                        "h1": ["30px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+                        "h3": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "h2": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "body-base": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "label-xs": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.fill {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-base text-body-base antialiased pb-24 selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<header class="flex justify-between items-center px-gutter py-stack-md w-full sticky top-0 z-50 bg-surface border-b border-outline-variant shadow-sm transition-all duration-200">
+<div class="flex items-center gap-stack-sm">
+<img alt="User Profile Photo" class="w-10 h-10 rounded-full object-cover border border-outline-variant active:scale-95 transition-all duration-200 cursor-pointer" data-alt="A professional headshot of a mature male agricultural expert wearing a casual green collared shirt. He has a warm, confident smile and is positioned against a bright, softly blurred background typical of a sunlit office. The image has a modern, clean light-mode aesthetic with natural lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXQigzoKtkcPsUWStRLZET11IwDLEk-natCgnNcZjvBKn_pC2EMA0TYfWVLLmAF0RejDq2xXSyU-lAQTl-9yYnDsovDfPX0BSGOYGXUfJaZvcPNMipDiHkY34jWwtVTXjjWSA0UD9sgMZ_RJoE-uoZB5XbYOwJgMjoo32AI7B4yJ0Kr0b1uot6oW9Dh_aq_d-JqUQ9uuURaoT6bnHw1gFSscUyYmZEGmUBET2BQQLtxqBBTtkeoMykal6R3wxh9zdzSBxTuvCysSo"/>
+<h1 class="font-h1 text-h1 text-primary">Mapan</h1>
+</div>
+<button class="flex items-center justify-center p-2 rounded-full hover:bg-surface-container-high transition-colors active:scale-95 text-primary">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+</header>
+<!-- Main Canvas -->
+<main class="w-full max-w-container-max mx-auto md:px-gutter flex flex-col">
+<!-- Module Header -->
+<section class="px-gutter pt-stack-lg pb-stack-sm flex flex-col gap-1">
+<h2 class="font-h2 text-h2 text-on-surface">Deteksi Penyakit</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Unggah foto daun atau bagian tanaman yang menunjukkan gejala untuk analisis AI instan.</p>
+</section>
+<!-- Image Upload Area (Depth Metaphor) -->
+<section class="px-gutter py-stack-sm">
+<div class="w-full bg-surface-container-lowest border-2 border-dashed border-outline-variant rounded-xl p-stack-lg flex flex-col items-center justify-center gap-stack-md text-center shadow-sm relative overflow-hidden group cursor-pointer hover:bg-surface-container-low transition-colors">
+<!-- Simulated Uploaded Image State (For UI demonstration) -->
+<div class="absolute inset-0 z-0 opacity-10 blur-sm mix-blend-multiply bg-center bg-cover" data-alt="A macro photograph of a rice leaf displaying distinct symptoms of Bacterial Leaf Blight. The leaf has long, yellowish-white water-soaked lesions running parallel to the veins. The lighting is clinical and bright, focusing heavily on the botanical textures and disease patterns against a neutral background." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBUPIm0jTniX5jSrn_dErqlR5HB1vxOQ95RkU6p45X3zkJv-78U216zlJ5HzzLwGI0A3ghXopx54u-i1AwwhvY1VnLMtkbJHZ8NtIbNY3LPpyblkRJY3qq_ZljoCXIJAo9ZzJKXD4T7qhxSdjT4wZk-sWuoausEv8zL0Ok3oxtMf2FA5U1ocKSM3ZdDtI8_NINbFc41f5aigMLXeKAfKvt20b-_SMlbd5iAwu4ia8K0ZCKTZAJ-lB9hjNJAwaZCDTipCiLTZR2XGfc');"></div>
+<div class="z-10 bg-primary-container text-on-primary-container p-4 rounded-full mb-2">
+<span class="material-symbols-outlined text-3xl">add_a_photo</span>
+</div>
+<div class="z-10 flex flex-col gap-1">
+<span class="font-h3 text-h3 text-on-surface">Ambil atau Pilih Foto</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Pastikan gejala terlihat jelas dan fokus.</span>
+</div>
+<div class="z-10 flex gap-stack-sm w-full mt-2">
+<button class="flex-1 bg-surface border border-outline-variant text-on-surface font-label-md text-label-md py-2.5 rounded-lg flex justify-center items-center gap-2 hover:bg-surface-container-high transition-colors active:scale-95 shadow-sm">
+<span class="material-symbols-outlined text-[20px]">image</span>
+                        Galeri
+                    </button>
+<button class="flex-1 bg-primary text-on-primary font-label-md text-label-md py-2.5 rounded-lg flex justify-center items-center gap-2 shadow-sm hover:bg-primary-container transition-colors active:scale-95">
+<span class="material-symbols-outlined text-[20px]">photo_camera</span>
+                        Kamera
+                    </button>
+</div>
+</div>
+</section>
+<!-- Real-time ML Prediction Display -->
+<section class="px-gutter py-stack-md flex flex-col gap-stack-md">
+<!-- Analysis Result Header -->
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-chart-primary fill">psychology</span>
+<h3 class="font-h3 text-h3 text-on-surface">Hasil Analisis AI</h3>
+</div>
+<!-- Primary Result Card -->
+<div class="bg-surface border border-border shadow-sm rounded-xl overflow-hidden flex flex-col">
+<!-- Result Top Row -->
+<div class="p-stack-md flex justify-between items-start gap-4 border-b border-surface-variant bg-surface-container-lowest">
+<div class="flex flex-col gap-1">
+<span class="font-label-xs text-label-xs text-on-surface-variant uppercase tracking-wider">Identifikasi Utama</span>
+<h2 class="font-h2 text-h2 text-error">Hawar Daun Bakteri</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant italic">Xanthomonas oryzae pv. oryzae</p>
+</div>
+<div class="w-16 h-16 rounded-lg overflow-hidden shrink-0 border border-border shadow-sm">
+<img alt="Thumbnail of infected leaf" class="w-full h-full object-cover" data-alt="A small square crop showing a close-up of a diseased rice leaf with yellowing lesions, representing Bacterial Leaf Blight. The image is brightly lit, highly textured, and serves as a clinical diagnostic thumbnail in a clean medical-style UI." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7nqoFhPKCcbwBMRXyGwItf5Kq6ZpDipcNwzK7LIo0UDjMkf6BmUu8hbYjgYnOabAoAX-MGht_kKePaD7D-0nfZx-a1Myy4XXhQERaKMQ2pUqlS5a9vAeMh1kiGmqN7RudX_GlI0DdR14C90Aj2SWeAEDFfvxh9gyaj5vUuyACcTngNLw18badXhcPjrdMMw5uNba2Hm7Mms6EZ600o79UgN-uTZz_j4EewWo_MXETEng4COuelxipoOrZg8GadiDOoM3DdA9JV8A"/>
+</div>
+</div>
+<!-- Confidence Bar Area -->
+<div class="p-stack-md bg-surface flex flex-col gap-2">
+<div class="flex justify-between items-center w-full">
+<span class="font-label-md text-label-md text-on-surface">Tingkat Kepercayaan (Confidence)</span>
+<span class="font-label-md text-label-md text-chart-primary">88%</span>
+</div>
+<!-- Custom Progress Bar (Emerald for >70%) -->
+<div class="w-full h-2.5 bg-surface-variant rounded-full overflow-hidden">
+<div class="h-full bg-chart-primary rounded-full" style="width: 88%;"></div>
+</div>
+<span class="font-label-xs text-label-xs text-on-surface-variant text-right mt-1">Diagnosis probabilitas tinggi.</span>
+</div>
+</div>
+<!-- Detail Cards Grid (Bento style on mobile) -->
+<div class="grid grid-cols-1 gap-stack-sm">
+<!-- Disease Info Card -->
+<div class="bg-surface-container-lowest border border-border shadow-sm rounded-lg p-stack-md flex flex-col gap-2">
+<div class="flex items-center gap-2 mb-1">
+<span class="material-symbols-outlined text-secondary text-[20px]">info</span>
+<span class="font-label-md text-label-md text-on-surface">Tentang Penyakit</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                        Penyakit ini disebabkan oleh bakteri yang menginfeksi pembuluh tanaman, menyebabkan daun menguning, layu, dan akhirnya mati. Sangat merusak pada fase vegetatif akhir hingga generatif.
+                    </p>
+</div>
+<!-- Recommendations Card -->
+<div class="bg-surface border border-border shadow-sm rounded-lg p-stack-md flex flex-col gap-3">
+<div class="flex items-center gap-2 mb-1">
+<span class="material-symbols-outlined text-secondary text-[20px]">medical_services</span>
+<span class="font-label-md text-label-md text-on-surface">Rekomendasi Tindakan</span>
+</div>
+<ul class="flex flex-col gap-3">
+<li class="flex items-start gap-3">
+<div class="mt-0.5 bg-surface-container w-5 h-5 rounded-full flex items-center justify-center shrink-0">
+<span class="font-label-xs text-label-xs text-on-surface">1</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Gunakan pupuk nitrogen secara berimbang, hindari aplikasi berlebih.</span>
+</li>
+<li class="flex items-start gap-3">
+<div class="mt-0.5 bg-surface-container w-5 h-5 rounded-full flex items-center justify-center shrink-0">
+<span class="font-label-xs text-label-xs text-on-surface">2</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Keringkan petakan sawah secara berkala (intermittent irrigation).</span>
+</li>
+<li class="flex items-start gap-3">
+<div class="mt-0.5 bg-surface-container w-5 h-5 rounded-full flex items-center justify-center shrink-0">
+<span class="font-label-xs text-label-xs text-on-surface">3</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Aplikasi bakterisida berbahan aktif tembaga jika serangan parah.</span>
+</li>
+</ul>
+</div>
+</div>
+<button class="w-full bg-surface border border-outline-variant text-primary font-label-md text-label-md py-3 rounded-lg flex justify-center items-center gap-2 mt-2 hover:bg-surface-container-lowest transition-colors active:scale-95 shadow-sm">
+<span class="material-symbols-outlined text-[20px]">description</span>
+                Buat Laporan Lapangan
+            </button>
+</section>
+<!-- Recent History Section -->
+<section class="px-gutter py-stack-md flex flex-col gap-stack-sm mb-stack-lg">
+<h3 class="font-h3 text-h3 text-on-surface mb-2">Riwayat Terakhir</h3>
+<div class="flex flex-col gap-3">
+<!-- History Item 1 -->
+<div class="bg-surface border border-border rounded-lg p-3 flex items-center gap-4 shadow-sm active:scale-95 transition-transform cursor-pointer">
+<img alt="History leaf 1" class="w-12 h-12 rounded bg-surface-container object-cover shrink-0" data-alt="A small square thumbnail showing a healthy, vibrant green agricultural leaf. The image is bright, well-lit, and sharply focused, representing a clean bill of health in a clinical diagnostic tracking interface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAS7lDL1p9Qsu-xpSGpm40dMPfvEPt49AKFBI9pLtmUjytyHxOl-OgWqsoHtEn7LZ8yrlCnr2nibeao0185-xzow4zzNMAIMeSTndfJy58VmQNMAXrkOSv18C2tSzrlXfQFAzc0eprioQpMaNbLqdUaHPP_3pHCQJQqxeVqOPDbXMrrfxoY0Alkpink3mRX3W4JyYonS49kAy7U52fJr-Z1AkkoilB5N-bLEmqqOtqheJUHkxGfxkqJ1T2U2obqioy5tWtmyeyuRhQ"/>
+<div class="flex flex-col flex-1">
+<span class="font-label-md text-label-md text-on-surface line-clamp-1">Sehat / Tidak Ada Penyakit</span>
+<span class="font-label-xs text-label-xs text-on-surface-variant">Hari ini, 08:45 WIB</span>
+</div>
+<div class="bg-surface-container px-2 py-1 rounded text-primary font-label-xs text-label-xs">95%</div>
+</div>
+<!-- History Item 2 -->
+<div class="bg-surface border border-border rounded-lg p-3 flex items-center gap-4 shadow-sm active:scale-95 transition-transform cursor-pointer">
+<div class="w-12 h-12 rounded bg-surface-container-high flex items-center justify-center shrink-0 text-on-surface-variant">
+<span class="material-symbols-outlined">broken_image</span>
+</div>
+<div class="flex flex-col flex-1">
+<span class="font-label-md text-label-md text-on-surface line-clamp-1">Bercak Coklat</span>
+<span class="font-label-xs text-label-xs text-on-surface-variant">Kemarin, 14:20 WIB</span>
+</div>
+<div class="bg-surface-container px-2 py-1 rounded text-primary font-label-xs text-label-xs">72%</div>
+</div>
+</div>
+<button class="text-primary font-label-md text-label-md w-full text-center mt-2 py-2">
+                Lihat Semua Riwayat
+            </button>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center bg-surface px-2 pb-safe pt-2 md:hidden shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)] border-t-0">
+<!-- Home (Inactive) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:text-primary transition-colors duration-150 active:scale-90" href="#">
+<span class="material-symbols-outlined mb-1">home</span>
+<span class="font-label-xs text-label-xs">Home</span>
+</a>
+<!-- Detection (Active) -->
+<a class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-full px-4 py-1 hover:text-primary transition-colors duration-150 active:scale-90 shadow-sm" href="#">
+<span class="material-symbols-outlined mb-1 fill">center_focus_strong</span>
+<span class="font-label-xs text-label-xs font-bold">Detection</span>
+</a>
+<!-- Expert (Inactive) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:text-primary transition-colors duration-150 active:scale-90" href="#">
+<span class="material-symbols-outlined mb-1">psychology</span>
+<span class="font-label-xs text-label-xs">Expert</span>
+</a>
+<!-- Profile (Inactive) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:text-primary transition-colors duration-150 active:scale-90" href="#">
+<span class="material-symbols-outlined mb-1">person</span>
+<span class="font-label-xs text-label-xs">Profile</span>
+</a>
+</nav>
+</body></html>

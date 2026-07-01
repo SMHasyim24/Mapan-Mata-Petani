@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Mapan - Dashboard Mobile</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary": "#ffffff",
+                        "primary": "#006948",
+                        "outline": "#6d7a72",
+                        "secondary-container": "#6cf8bb",
+                        "secondary": "#006c49",
+                        "primary-fixed-dim": "#68dba9",
+                        "on-secondary-fixed": "#002113",
+                        "surface-tint": "#006c4a",
+                        "tertiary-container": "#ba5551",
+                        "background": "#f8fafc",
+                        "on-tertiary-fixed-variant": "#7f2928",
+                        "surface-container-low": "#eff5ef",
+                        "on-tertiary-container": "#fffbff",
+                        "chart-secondary": "#34d399",
+                        "primary-container": "#00855d",
+                        "on-primary-fixed-variant": "#005137",
+                        "surface-container-high": "#e4eae4",
+                        "on-primary-fixed": "#002114",
+                        "border": "#e2e8f0",
+                        "surface-container-highest": "#dee4de",
+                        "on-tertiary-fixed": "#410004",
+                        "destructive": "#dc2626",
+                        "outline-variant": "#bccac0",
+                        "on-error": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-fixed-variant": "#005236",
+                        "surface-bright": "#f5fbf5",
+                        "on-primary-container": "#f5fff7",
+                        "tertiary-fixed-dim": "#ffb3ae",
+                        "on-surface": "#171d19",
+                        "tertiary-fixed": "#ffdad7",
+                        "muted": "#64748b",
+                        "secondary-fixed-dim": "#4edea3",
+                        "on-secondary-container": "#00714d",
+                        "on-surface-variant": "#3d4a42",
+                        "tertiary": "#9b3e3b",
+                        "on-background": "#171d19",
+                        "inverse-on-surface": "#ecf2ec",
+                        "surface-container-lowest": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "error-container": "#ffdad6",
+                        "secondary-fixed": "#6ffbbe",
+                        "surface-dim": "#d5dcd6",
+                        "chart-primary": "#059669",
+                        "surface-variant": "#dee4de",
+                        "surface-container": "#e9efe9",
+                        "on-primary": "#ffffff",
+                        "surface": "#ffffff",
+                        "inverse-primary": "#68dba9",
+                        "error": "#ba1a1a",
+                        "inverse-surface": "#2c322e",
+                        "primary-fixed": "#85f8c4"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "1.5rem",
+                        "stack-lg": "2rem",
+                        "margin-page": "2rem",
+                        "sidebar-width": "280px",
+                        "container-max": "1440px",
+                        "stack-sm": "0.5rem",
+                        "stack-md": "1rem"
+                    },
+                    "fontFamily": {
+                        "label-xs": ["Inter"],
+                        "h2": ["Manrope"],
+                        "h1": ["Manrope"],
+                        "h3": ["Manrope"],
+                        "body-base": ["Inter"],
+                        "label-md": ["Inter"],
+                        "body-sm": ["Inter"]
+                    },
+                    "fontSize": {
+                        "label-xs": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "h2": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "h1": ["30px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "h3": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "body-base": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-background min-h-screen pb-24 font-body-base">
+<!-- TopAppBar -->
+<header class="flex justify-between items-center px-gutter py-stack-md w-full sticky top-0 z-50 bg-surface dark:bg-surface-container shadow-sm border-b border-outline-variant dark:border-outline text-primary dark:text-primary-fixed-dim font-h2 text-h2 font-bold hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-colors active:scale-95 transition-all duration-200">
+<div class="flex items-center gap-3">
+<img alt="User Profile" class="w-10 h-10 rounded-full object-cover border border-outline-variant" data-alt="A small circular profile picture of an Asian male farmer wearing a woven straw hat, smiling warmly against a blurred background of green rice fields. The lighting is bright and sunny, conveying a sense of optimism and agricultural expertise." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-wlA1kjcbwFljMFQy6HhlFSm_5oHGKvq4uFajx5kMhswBM4NRYR_-MMDWc7R0FY8_o8j6Apejn53uVwx_ULillHGLsgFSxcMsLFB564vEEYsS3FaafvbK_pu8grxNgtIM6gYNvKuG97voHLEl7FJZaoFDA2kV3o0pf3NbY4Q5UxTpKanVoUyjRNGeRA4Am5mELrbZjdPmMtZOUvadLdHghx8_gRhrVAjOHTik8gZKHD6hrJ7gfBNrzQpiFNStvn-Zqcix3RSxyUs"/>
+<span class="font-h1 text-h1 text-primary dark:text-primary-fixed-dim">Mapan</span>
+</div>
+<button class="text-on-surface-variant dark:text-outline-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">notifications</span>
+</button>
+</header>
+<main class="px-gutter pt-stack-md space-y-stack-lg max-w-container-max mx-auto">
+<!-- Greeting Section -->
+<section>
+<h2 class="font-h2 text-h2 text-on-surface mb-1">Selamat Pagi, Petani!</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Cerah • Kesehatan padi optimal</p>
+</section>
+<!-- Stats Grid -->
+<section class="grid grid-cols-2 gap-4">
+<div class="bg-surface border border-border rounded-lg p-4 shadow-sm">
+<span class="material-symbols-outlined text-primary mb-2" style="font-variation-settings: 'FILL' 1;">biotech</span>
+<p class="font-label-xs text-label-xs text-on-surface-variant uppercase">Total Deteksi</p>
+<p class="font-h2 text-h2 text-primary">42</p>
+</div>
+<div class="bg-surface border border-border rounded-lg p-4 shadow-sm">
+<span class="material-symbols-outlined text-error mb-2" style="font-variation-settings: 'FILL' 1;">coronavirus</span>
+<p class="font-label-xs text-label-xs text-on-surface-variant uppercase">Penyakit Terdeteksi</p>
+<p class="font-h2 text-h2 text-error">12</p>
+</div>
+<div class="bg-surface border border-border rounded-lg p-4 shadow-sm">
+<span class="material-symbols-outlined text-blue-600 mb-2" style="font-variation-settings: 'FILL' 1;">analytics</span>
+<p class="font-label-xs text-label-xs text-on-surface-variant uppercase">Akurasi Rata-rata</p>
+<p class="font-h2 text-h2 text-blue-600">94%</p>
+</div>
+<div class="bg-surface border border-border rounded-lg p-4 shadow-sm">
+<span class="material-symbols-outlined text-chart-primary mb-2" style="font-variation-settings: 'FILL' 1;">trending_up</span>
+<p class="font-label-xs text-label-xs text-on-surface-variant uppercase">Laporan Mingguan</p>
+<p class="font-h2 text-h2 text-chart-primary">+5%</p>
+</div>
+</section>
+<!-- Quick Action Buttons -->
+<section class="flex flex-col gap-3">
+<button class="bg-primary text-on-primary font-label-md text-label-md py-3 px-6 rounded-lg flex items-center justify-center gap-2 shadow-sm hover:bg-primary-container transition-colors w-full">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">camera_alt</span>
+                Deteksi Penyakit
+            </button>
+<button class="bg-surface text-primary border border-outline-variant font-label-md text-label-md py-3 px-6 rounded-lg flex items-center justify-center gap-2 shadow-sm hover:bg-surface-container-low transition-colors w-full">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">psychology</span>
+                Konsultasi Pakar
+            </button>
+</section>
+<!-- Recent Activity List -->
+<section>
+<h3 class="font-h3 text-h3 text-on-surface mb-3">Aktivitas Terkini</h3>
+<div class="space-y-3">
+<div class="bg-surface border border-border rounded-lg p-3 flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-error-container text-on-error-container flex items-center justify-center">
+<span class="material-symbols-outlined">warning</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface">Blast terdeteksi</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">2 jam lalu</p>
+</div>
+</div>
+<span class="font-label-xs text-label-xs text-error font-bold">98% conf</span>
+</div>
+<div class="bg-surface border border-border rounded-lg p-3 flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-tertiary-container text-on-tertiary-container flex items-center justify-center">
+<span class="material-symbols-outlined">pest_control</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface">Brown Spot terdeteksi</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Kemarin</p>
+</div>
+</div>
+<span class="font-label-xs text-label-xs text-tertiary font-bold">85% conf</span>
+</div>
+</div>
+</section><!-- Management Section -->
+<section class="pb-8">
+<h3 class="font-h3 text-h3 text-on-surface mb-3">Manajemen Data</h3>
+<div class="grid grid-cols-3 gap-3">
+<!-- Penyakit Management -->
+<button class="bg-surface border border-border rounded-lg p-3 flex flex-col items-center text-center shadow-sm hover:bg-surface-container-low transition-colors group">
+<div class="w-10 h-10 rounded-full bg-secondary-container/30 text-secondary flex items-center justify-center mb-2 group-hover:bg-secondary-container transition-colors">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">coronavirus</span>
+</div>
+<p class="font-label-md text-label-md text-on-surface mb-1">Penyakit</p>
+<span class="font-label-xs text-[10px] text-primary bg-primary-fixed/30 px-2 py-0.5 rounded-full">Kelola</span>
+</button>
+<!-- Gejala Management -->
+<button class="bg-surface border border-border rounded-lg p-3 flex flex-col items-center text-center shadow-sm hover:bg-surface-container-low transition-colors group">
+<div class="w-10 h-10 rounded-full bg-secondary-container/30 text-secondary flex items-center justify-center mb-2 group-hover:bg-secondary-container transition-colors">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">list_alt</span>
+</div>
+<p class="font-label-md text-label-md text-on-surface mb-1">Gejala</p>
+<span class="font-label-xs text-[10px] text-primary bg-primary-fixed/30 px-2 py-0.5 rounded-full">Kelola</span>
+</button>
+<!-- Solusi Management -->
+<button class="bg-surface border border-border rounded-lg p-3 flex flex-col items-center text-center shadow-sm hover:bg-surface-container-low transition-colors group">
+<div class="w-10 h-10 rounded-full bg-secondary-container/30 text-secondary flex items-center justify-center mb-2 group-hover:bg-secondary-container transition-colors">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">medical_services</span>
+</div>
+<p class="font-label-md text-label-md text-on-surface mb-1">Solusi</p>
+<span class="font-label-xs text-[10px] text-primary bg-primary-fixed/30 px-2 py-0.5 rounded-full">Kelola</span>
+</button>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center bg-surface dark:bg-surface-container px-2 pb-safe pt-2 md:hidden rounded-t-xl border-t border-outline-variant dark:border-outline shadow-lg">
+<!-- Home (Active) -->
+<button class="flex flex-col items-center justify-center bg-secondary-container dark:bg-secondary text-on-secondary-container dark:text-on-secondary rounded-full px-4 py-1 hover:text-primary dark:hover:text-primary-fixed-dim active:scale-90 transition-transform duration-150">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-label-xs text-label-xs mt-1">Home</span>
+</button>
+<!-- Detection -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-4 py-1 hover:text-primary dark:hover:text-primary-fixed-dim active:scale-90 transition-transform duration-150">
+<span class="material-symbols-outlined">center_focus_strong</span>
+<span class="font-label-xs text-label-xs mt-1">Detection</span>
+</button>
+<!-- Expert -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-4 py-1 hover:text-primary dark:hover:text-primary-fixed-dim active:scale-90 transition-transform duration-150">
+<span class="material-symbols-outlined">psychology</span>
+<span class="font-label-xs text-label-xs mt-1">Expert</span>
+</button>
+<!-- Profile -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-4 py-1 hover:text-primary dark:hover:text-primary-fixed-dim active:scale-90 transition-transform duration-150">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-xs text-label-xs mt-1">Profile</span>
+</button>
+</nav>
+</body></html>

@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+
+<html class="light" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "destructive": "#dc2626",
+                    "on-primary-container": "#f5fff7",
+                    "inverse-surface": "#2c322e",
+                    "on-tertiary": "#ffffff",
+                    "surface-tint": "#006c4a",
+                    "background": "#f8fafc",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "on-tertiary-fixed": "#410004",
+                    "muted": "#64748b",
+                    "inverse-primary": "#68dba9",
+                    "on-primary-fixed": "#002114",
+                    "on-tertiary-fixed-variant": "#7f2928",
+                    "tertiary-container": "#ba5551",
+                    "on-primary-fixed-variant": "#005137",
+                    "tertiary-fixed-dim": "#ffb3ae",
+                    "on-error": "#ffffff",
+                    "chart-primary": "#059669",
+                    "tertiary": "#9b3e3b",
+                    "on-error-container": "#93000a",
+                    "surface-bright": "#f5fbf5",
+                    "on-tertiary-container": "#fffbff",
+                    "surface-container": "#e9efe9",
+                    "surface": "#ffffff",
+                    "inverse-on-surface": "#ecf2ec",
+                    "error-container": "#ffdad6",
+                    "primary-fixed-dim": "#68dba9",
+                    "tertiary-fixed": "#ffdad7",
+                    "on-surface-variant": "#3d4a42",
+                    "on-secondary-container": "#00714d",
+                    "surface-container-high": "#e4eae4",
+                    "surface-dim": "#d5dcd6",
+                    "on-surface": "#171d19",
+                    "primary-container": "#00855d",
+                    "primary": "#006948",
+                    "border": "#e2e8f0",
+                    "on-secondary-fixed": "#002113",
+                    "chart-secondary": "#34d399",
+                    "on-primary": "#ffffff",
+                    "surface-container-low": "#eff5ef",
+                    "secondary": "#006c49",
+                    "surface-variant": "#dee4de",
+                    "secondary-container": "#6cf8bb",
+                    "primary-fixed": "#85f8c4",
+                    "secondary-fixed": "#6ffbbe",
+                    "secondary-fixed-dim": "#4edea3",
+                    "on-background": "#171d19",
+                    "outline": "#6d7a72",
+                    "on-secondary-fixed-variant": "#005236",
+                    "surface-container-highest": "#dee4de",
+                    "error": "#ba1a1a",
+                    "outline-variant": "#bccac0"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "sidebar-width": "280px",
+                    "container-max": "1440px",
+                    "stack-lg": "2rem",
+                    "stack-sm": "0.5rem",
+                    "stack-md": "1rem",
+                    "margin-page": "2rem",
+                    "gutter": "1.5rem"
+            },
+            "fontFamily": {
+                    "h1": ["Manrope"],
+                    "body-sm": ["Inter"],
+                    "label-md": ["Inter"],
+                    "h3": ["Manrope"],
+                    "body-base": ["Inter"],
+                    "label-xs": ["Inter"],
+                    "h2": ["Manrope"]
+            },
+            "fontSize": {
+                    "h1": ["30px", {"lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "fontWeight": "500"}],
+                    "h3": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "body-base": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "label-xs": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "h2": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen flex">
+<!-- Navigation Drawer (Desktop) -->
+<aside class="hidden md:flex flex-col h-full p-stack-md gap-stack-sm sticky left-0 top-0 overflow-y-auto w-sidebar-width bg-surface-container-low dark:bg-surface-container-lowest border-r border-outline-variant dark:border-outline z-50">
+<div class="flex items-center gap-stack-sm mb-stack-lg px-2">
+<span class="font-h2 text-h2 text-primary">Mapan</span>
+</div>
+<div class="flex flex-col gap-1 mb-8">
+<div class="flex items-center gap-3 px-3 py-4 bg-surface-container-high rounded-xl">
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container">
+<span class="material-symbols-outlined">person</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface">Expert User</p>
+<p class="font-label-xs text-label-xs text-on-surface-variant">Plant Pathologist</p>
+</div>
+</div>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-outline-variant hover:bg-surface-container-high dark:hover:bg-surface-container-highest rounded-lg transition-colors font-body-base text-body-base" href="#">
+<span class="material-symbols-outlined">dashboard</span> Dashboard
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-outline-variant hover:bg-surface-container-high dark:hover:bg-surface-container-highest rounded-lg transition-colors font-body-base text-body-base" href="#">
+<span class="material-symbols-outlined">history</span> Detection History
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-outline-variant hover:bg-surface-container-high dark:hover:bg-surface-container-highest rounded-lg transition-colors font-body-base text-body-base" href="#">
+<span class="material-symbols-outlined">biotech</span> Expert System
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 bg-secondary-container dark:bg-secondary text-on-secondary-container dark:text-on-secondary font-bold rounded-lg transition-transform active:translate-x-1 font-body-base text-body-base" href="#">
+<span class="material-symbols-outlined">potted_plant</span> Field Reports
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-outline-variant hover:bg-surface-container-high dark:hover:bg-surface-container-highest rounded-lg transition-colors font-body-base text-body-base" href="#">
+<span class="material-symbols-outlined">settings</span> Settings
+            </a>
+</nav>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col min-w-0">
+<!-- TopAppBar -->
+<header class="flex justify-between items-center px-gutter py-stack-md w-full sticky top-0 z-50 bg-surface dark:bg-surface-container border-b border-outline-variant dark:border-outline shadow-sm">
+<div class="flex items-center gap-4">
+<span class="font-h1 text-h1 text-primary dark:text-primary-fixed-dim">Mapan</span>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-2 rounded-full hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-colors active:scale-95 duration-200 text-on-surface-variant">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<div class="w-8 h-8 rounded-full overflow-hidden bg-surface-variant border border-outline-variant">
+<img class="w-full h-full object-cover" data-alt="A professional portrait of a male plant pathologist in a bright, modern agricultural research laboratory. He is wearing a clean lab coat and smiling warmly at the camera. The background is softly blurred, showing green plants in hydroponic setups under bright, clean white lighting that emphasizes a high-tech yet organic scientific atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6BLpXvsk6quzRcXzbU5eaFwae0BBSy0G8ePvP3LQ3L8sDqkF0kNZYm_u4QIEs_7JxuNuqHdoztIKMQjEj4xOOSeiSDlRS55evH1ntIJcgDrjW8B27qzDsCMd9zmFH4_R3Dp4xSUCPTffK90aJUEBXN-QzKS620oj6hssvaBuoYktyE-p0jj5WE1thEt-o8sbz9Oif4ja0cxIKcV0UOYEAI_wmmZfEzdKSf5FKJd2bnrDHAyFQPdLMK8kGag1Hozcsb3MPS2A1cf0"/>
+</div>
+</div>
+</header>
+<!-- Search & Content Scrollable -->
+<div class="flex-1 overflow-y-auto px-4 md:px-gutter py-stack-lg max-w-container-max mx-auto w-full pb-32">
+<!-- Page Header -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-stack-lg">
+<div>
+<h2 class="font-h2 text-h2 text-on-surface">Laporan Lapangan</h2>
+<p class="text-on-surface-variant font-body-sm text-body-sm mt-1">Kelola dan pantau status diagnosa penyakit tanaman di lapangan.</p>
+</div>
+<button class="hidden md:flex items-center gap-2 px-6 py-3 bg-primary text-on-primary rounded-xl font-label-md text-label-md shadow-sm hover:opacity-90 active:scale-95 transition-all">
+<span class="material-symbols-outlined">add</span>
+                    Tambah Laporan
+                </button>
+</div>
+<!-- Search and Filter Bar -->
+<div class="flex gap-2 mb-stack-lg sticky top-[-1px] bg-background pt-2 z-10 pb-2">
+<div class="relative flex-1 group">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="w-full pl-10 pr-4 py-3 bg-surface border border-outline-variant rounded-xl focus:ring-2 focus:ring-primary focus:border-primary transition-all font-body-base text-body-base outline-none" placeholder="Cari laporan..." type="text"/>
+</div>
+<button class="flex items-center gap-2 px-4 py-3 bg-surface border border-outline-variant rounded-xl text-on-surface-variant hover:bg-surface-container-low transition-colors active:scale-95">
+<span class="material-symbols-outlined">tune</span>
+<span class="hidden sm:inline font-label-md text-label-md">Filter</span>
+</button>
+</div>
+<!-- Reports Grid/List -->
+<div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4">
+<!-- Report Card 1 -->
+<div class="bg-surface border border-outline-variant rounded-xl p-stack-md shadow-sm hover:shadow-md transition-all flex flex-col gap-3 group relative">
+<div class="flex justify-between items-start">
+<span class="px-3 py-1 rounded-full bg-error-container text-on-error-container font-label-xs text-label-xs">Sent</span>
+<button class="p-1 rounded-full hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-outline">more_vert</span>
+</button>
+</div>
+<div>
+<h3 class="font-h3 text-h3 text-on-surface group-hover:text-primary transition-colors">Serangan Blast di Desa Sukatani</h3>
+<div class="flex items-center gap-2 mt-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">person</span>
+<span class="font-body-sm text-body-sm">Ahmad Subarjo</span>
+</div>
+<div class="flex items-center gap-2 mt-1 text-outline">
+<span class="material-symbols-outlined text-[18px]">calendar_today</span>
+<span class="font-label-xs text-label-xs">12 Okt 2023 • 14:20</span>
+</div>
+</div>
+<div class="mt-2 pt-3 border-t border-outline-variant flex justify-between items-center">
+<div class="flex -space-x-2">
+<img class="w-6 h-6 rounded-full border-2 border-surface" data-alt="Close up photograph of a professional agronomist inspecting rice paddy leaves with visible fungal lesions. The lighting is bright natural daylight, highlighting the organic green textures and the technical diagnostic focus. The style is clean, sharp, and documentary-like, emphasizing professional agricultural expertise." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_ntn5l5j_9KoP21mJkkSop0A657RK6uTYm5sRrRvaprFK2HwbE0gwk0DjDTOdh5mZmCfxcyeSXkglX0r9dgJxfJgh3TqsKN0Ici5Zv4J1s8hsI6slq80X_IM2lWwHg-qUnzqn1KbKPa-MzsGNuW6Ah1maDNchpBrkBKQrRv3QVRyJiYvTBlIx1QozkgQJhWVY5NbBtMFAk3C-UGPf8vc7lybJMdQMuyNLMmlsyWB2cgFg9M75RBKiymTGT_nNw8pkWU9OPanznDI"/>
+<img class="w-6 h-6 rounded-full border-2 border-surface" data-alt="Macro photography of infected rice plant stems showing classic blast disease symptoms. The setting is a lush emerald-green paddy field under a clear blue sky. The visual style is crisp and detailed, maintaining a corporate scientific aesthetic with naturalistic yet high-contrast lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTNPDpffi1ZqoPeHl1ii_KKaMT1VmN0ODZQDmodwpd5fJpVj4zt-zX2SHPCPfcyWM_zDStPJqoDbFfozMz2U4O-n6MFa9I_My0psZ6aiihxIciBb4TedU4TPvehNYxyTcnAz-54EPMSMncM55YWHNFNuUZolM5hKxPKp4GErUkf7fQFLdpavAOjxmPi9XBDNky5KWagdyKHjNiEZhXdKtVVdqpKNRUXhzNOeAddi5KB2f262Dybx9bumk7DbNKHzShC1WGCTPlfHg"/>
+</div>
+<span class="font-label-xs text-label-xs text-outline italic">2 Lampiran</span>
+</div>
+</div>
+<!-- Report Card 2 -->
+<div class="bg-surface border border-outline-variant rounded-xl p-stack-md shadow-sm hover:shadow-md transition-all flex flex-col gap-3 group relative">
+<div class="flex justify-between items-start">
+<span class="px-3 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-xs text-label-xs">Verified</span>
+<button class="p-1 rounded-full hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-outline">more_vert</span>
+</button>
+</div>
+<div>
+<h3 class="font-h3 text-h3 text-on-surface group-hover:text-primary transition-colors">Bacterial Leaf Blight - Blok C</h3>
+<div class="flex items-center gap-2 mt-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">person</span>
+<span class="font-body-sm text-body-sm">Siti Aminah</span>
+</div>
+<div class="flex items-center gap-2 mt-1 text-outline">
+<span class="material-symbols-outlined text-[18px]">calendar_today</span>
+<span class="font-label-xs text-label-xs">11 Okt 2023 • 09:15</span>
+</div>
+</div>
+<div class="mt-2 pt-3 border-t border-outline-variant flex justify-between items-center">
+<div class="flex -space-x-2">
+<div class="w-6 h-6 rounded-full bg-primary-container flex items-center justify-center text-[10px] text-on-primary-container font-bold border-2 border-surface">SA</div>
+</div>
+<span class="font-label-xs text-label-xs text-outline italic">No Attachment</span>
+</div>
+</div>
+<!-- Report Card 3 -->
+<div class="bg-surface border border-outline-variant rounded-xl p-stack-md shadow-sm hover:shadow-md transition-all flex flex-col gap-3 group relative">
+<div class="flex justify-between items-start">
+<span class="px-3 py-1 rounded-full bg-surface-container-highest text-on-surface-variant font-label-xs text-label-xs">Draft</span>
+<button class="p-1 rounded-full hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-outline">more_vert</span>
+</button>
+</div>
+<div>
+<h3 class="font-h3 text-h3 text-on-surface group-hover:text-primary transition-colors">Identifikasi Hama Wereng Hijau</h3>
+<div class="flex items-center gap-2 mt-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">person</span>
+<span class="font-body-sm text-body-sm">Dedi Kurniawan</span>
+</div>
+<div class="flex items-center gap-2 mt-1 text-outline">
+<span class="material-symbols-outlined text-[18px]">calendar_today</span>
+<span class="font-label-xs text-label-xs">10 Okt 2023 • 16:45</span>
+</div>
+</div>
+<div class="mt-2 pt-3 border-t border-outline-variant flex justify-between items-center">
+<div class="flex -space-x-2">
+<img class="w-6 h-6 rounded-full border-2 border-surface" data-alt="A portrait of a male field worker in his late 30s wearing a sun hat and a green polo shirt, standing in a sunlit rice field. The lighting is vibrant and warm, creating a feeling of midday productivity. The style is realistic and modern, with a clean emerald and gold color palette that feels professional and reliable." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCu7PYMCHvomB9D9SrfhLqKgw9il4KC2G7v9o9OT1W0G_rV_fnM2VrrEIOeBPUSxvWIOfDf3G2GD2wD4nwgSOcG3bHIZdES79njD2g7MOpAobE17OEGKzWDOCKY7Bcmz4VJ9CJrjPJJJ1ytgq9RcNf-8g2eJWx2vjkl5g4J0hpChQB06i23R5JeNrZjMZmrb033gBIG82wtnO2RBwK2N64GmKvHjRi0DXWLy7vPCXvD9nsWNsFo6Er6GJRdZ91RKWKPRvMTGaS6Pp4"/>
+</div>
+<span class="font-label-xs text-label-xs text-outline italic">4 Lampiran</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Floating Action Button (Mobile) -->
+<button class="md:hidden fixed bottom-24 right-6 w-14 h-14 bg-primary text-on-primary rounded-full shadow-lg flex items-center justify-center active:scale-90 transition-transform z-40">
+<span class="material-symbols-outlined text-[32px]">add</span>
+</button>
+<!-- BottomNavBar (Mobile) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center bg-surface dark:bg-surface-container px-2 pb-safe pt-2 border-t border-outline-variant dark:border-outline md:hidden">
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-4 py-1 hover:text-primary dark:hover:text-primary-fixed-dim transition-colors active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-md text-label-md">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-secondary-container dark:bg-secondary text-on-secondary-container dark:text-on-secondary rounded-full px-4 py-1 transition-transform active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined">center_focus_strong</span>
+<span class="font-label-md text-label-md">Detection</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-4 py-1 hover:text-primary dark:hover:text-primary-fixed-dim transition-colors active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined">psychology</span>
+<span class="font-label-md text-label-md">Expert</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-4 py-1 hover:text-primary dark:hover:text-primary-fixed-dim transition-colors active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-md text-label-md">Profile</span>
+</a>
+</nav>
+</main>
+</body></html>

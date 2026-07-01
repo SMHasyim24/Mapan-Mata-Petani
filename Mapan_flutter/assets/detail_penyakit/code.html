@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+
+<html class="light" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Mapan - Detail Penyakit</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-highest": "#dee4de",
+                    "secondary-fixed": "#6ffbbe",
+                    "on-tertiary-fixed": "#410004",
+                    "on-background": "#171d19",
+                    "background": "#f8fafc",
+                    "surface-container-low": "#eff5ef",
+                    "on-primary-fixed": "#002114",
+                    "on-error": "#ffffff",
+                    "surface": "#ffffff",
+                    "destructive": "#dc2626",
+                    "secondary": "#006c49",
+                    "primary": "#006948",
+                    "chart-primary": "#059669",
+                    "on-error-container": "#93000a",
+                    "error": "#ba1a1a",
+                    "tertiary-fixed": "#ffdad7",
+                    "tertiary": "#9b3e3b",
+                    "on-tertiary-container": "#fffbff",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary-fixed-variant": "#005236",
+                    "surface-bright": "#f5fbf5",
+                    "primary-fixed-dim": "#68dba9",
+                    "inverse-primary": "#68dba9",
+                    "primary-fixed": "#85f8c4",
+                    "on-primary": "#ffffff",
+                    "on-tertiary-fixed-variant": "#7f2928",
+                    "error-container": "#ffdad6",
+                    "on-primary-fixed-variant": "#005137",
+                    "primary-container": "#00855d",
+                    "on-primary-container": "#f5fff7",
+                    "muted": "#64748b",
+                    "on-surface": "#171d19",
+                    "inverse-on-surface": "#ecf2ec",
+                    "on-surface-variant": "#3d4a42",
+                    "tertiary-fixed-dim": "#ffb3ae",
+                    "on-secondary-fixed": "#002113",
+                    "surface-container": "#e9efe9",
+                    "border": "#e2e8f0",
+                    "surface-variant": "#dee4de",
+                    "secondary-container": "#6cf8bb",
+                    "on-tertiary": "#ffffff",
+                    "chart-secondary": "#34d399",
+                    "surface-tint": "#006c4a",
+                    "outline": "#6d7a72",
+                    "inverse-surface": "#2c322e",
+                    "secondary-fixed-dim": "#4edea3",
+                    "on-secondary": "#ffffff",
+                    "tertiary-container": "#ba5551",
+                    "on-secondary-container": "#00714d",
+                    "surface-dim": "#d5dcd6",
+                    "outline-variant": "#bccac0",
+                    "surface-container-high": "#e4eae4"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter": "1.5rem",
+                    "container-max": "1440px",
+                    "stack-md": "1rem",
+                    "sidebar-width": "280px",
+                    "margin-page": "2rem",
+                    "stack-lg": "2rem",
+                    "stack-sm": "0.5rem"
+            },
+            "fontFamily": {
+                    "h2": ["Manrope"],
+                    "label-xs": ["Inter"],
+                    "label-md": ["Inter"],
+                    "h1": ["Manrope"],
+                    "body-sm": ["Inter"],
+                    "body-base": ["Inter"],
+                    "h3": ["Manrope"]
+            },
+            "fontSize": {
+                    "h2": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                    "label-xs": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                    "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+                    "h1": ["30px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                    "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                    "body-base": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                    "h3": ["20px", { "lineHeight": "28px", "fontWeight": "600" }]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Custom scrollbar for horizontal scrolling galleries */
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-base antialiased w-full h-full flex justify-center pb-[100px]">
+<!-- Main Container - Mobile Centric max width for web -->
+<main class="w-full max-w-[480px] bg-surface min-h-screen shadow-2xl relative">
+<!-- 1. Header (Floating over Hero) -->
+<header class="absolute top-0 left-0 w-full z-10 flex justify-between items-center p-4">
+<button class="w-10 h-10 rounded-full bg-surface/80 backdrop-blur-md flex items-center justify-center text-on-surface shadow-sm active:scale-95 transition-transform">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<button class="w-10 h-10 rounded-full bg-surface/80 backdrop-blur-md flex items-center justify-center text-on-surface shadow-sm active:scale-95 transition-transform">
+<span class="material-symbols-outlined">share</span>
+</button>
+</header>
+<!-- 2. Hero Section -->
+<section class="w-full h-[320px] relative rounded-b-[2rem] overflow-hidden shadow-sm">
+<img alt="Gambar penyakit Blast pada daun padi" class="w-full h-full object-cover" data-alt="A highly detailed macro photograph of a rice leaf infected with Blast disease (Pyricularia oryzae). The leaf displays distinct diamond-shaped lesions with ashy gray centers and dark brown margins. The background is softly blurred showing a lush, vibrant green rice field in natural, bright daylight. The visual style is scientific, realistic, and clinically clear, emphasizing the agricultural texture and diagnostic details necessary for a modern agricultural app." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPCmp_IBgnSgVm9vFGdizplnDzhCVm068V2TBN19Ioj_4IhDirqWbFDjimzGXLRtgyT3ZNcCcbBoAc370lyqwkdmCzB6MNXIfWLcdm4xzeHg_dMHY2jTdZQafbBvwRO8eW-u9Q2a4RDBQwpHXWgwpSbjA_NjerwLehGToMo1Q9NVnK8SsP_ZYXgGvp4GUtPD57ZharXMgUA7SYlbtpTAnlaM7y9lNj0SxfC6t9Sd0wZJuMysp1IvaOnfwNaUhvwQROkdHzFA9BOCw"/>
+<!-- Gradient Overlay for readability -->
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent"></div>
+<!-- 3. Disease Identity (Overlayed at bottom of Hero) -->
+<div class="absolute bottom-0 left-0 w-full p-6 text-white">
+<div class="flex items-center gap-2 mb-2">
+<span class="px-2 py-1 rounded-full bg-error/90 text-on-error font-label-xs text-label-xs uppercase tracking-wider backdrop-blur-sm shadow-sm border border-error-container/30">
+                        Sering Menyerang
+                    </span>
+</div>
+<h1 class="font-h1 text-h1 mb-1">Blast</h1>
+<p class="font-body-base italic text-surface-container-low opacity-90">(Pyricularia oryzae)</p>
+</div>
+</section>
+<!-- Content Padding Wrapper -->
+<div class="px-6 py-6 flex flex-col gap-8">
+<!-- 4. Overview -->
+<section class="flex flex-col gap-3">
+<h2 class="font-h3 text-h3 text-primary">Deskripsi</h2>
+<p class="font-body-base text-on-surface-variant leading-relaxed">
+                    Penyakit blast adalah salah satu penyakit paling merusak pada tanaman padi yang disebabkan oleh jamur <i>Pyricularia oryzae</i>. Jamur ini dapat menyerang seluruh fase pertumbuhan tanaman, mulai dari pembibitan hingga masa berbuah, sering menyebabkan kehilangan hasil panen yang signifikan.
+                </p>
+<div class="bg-surface-container-low rounded-lg p-4 border border-outline-variant mt-2 flex gap-3 items-start">
+<span class="material-symbols-outlined text-primary mt-0.5">air</span>
+<p class="font-body-sm text-on-surface-variant">
+<strong class="text-on-surface">Penyebaran:</strong> Spora jamur menyebar melalui angin dan percikan air hujan, terutama efektif pada malam hari yang lembab.
+                    </p>
+</div>
+</section>
+<!-- 5. Symptoms Gallery -->
+<section class="flex flex-col gap-3 -mx-6 px-6">
+<h2 class="font-h3 text-h3 text-primary">Gejala Visual</h2>
+<div class="flex gap-4 overflow-x-auto hide-scrollbar snap-x pb-4">
+<!-- Gallery Item 1 -->
+<div class="min-w-[160px] snap-start flex flex-col gap-2">
+<div class="w-[160px] h-[160px] rounded-xl overflow-hidden shadow-sm border border-outline-variant">
+<img alt="Gejala awal blast pada daun" class="w-full h-full object-cover" data-alt="Close up image of an early stage rice leaf blast symptom showing small, water-soaked, whitish-gray specks. The lighting is bright and clinically clear. The overall tone is scientific and agricultural, suitable for a diagnostic tool." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4L5-p7yuL1gRtLXImhjWmUqwpjgMcVONfJAbUmr-j9qHEDEHTeL2SZTvY4Z1WzCZXep6EJQytVpBIXfewYufB4NpexFqLqfZyrUm0iJ0SK6cb_DlTTs_CkU2GdZvlFXx-RXmksd2PttEf0OQa_qjwa_zAJCsgPh0h9fR1Rbv41Zh6WPVoBA8fQiGHHHTyB3KzgBYTodosOHpGpHsc9GvI5wh6ZJjBPW-lGWP-99-jM_hgKyngsk3PJ4jYg7oI_xyoCqiK5Nxoq0I"/>
+</div>
+<p class="font-label-md text-label-md text-on-surface text-center">Fase Awal (Daun)</p>
+</div>
+<!-- Gallery Item 2 -->
+<div class="min-w-[160px] snap-start flex flex-col gap-2">
+<div class="w-[160px] h-[160px] rounded-xl overflow-hidden shadow-sm border border-outline-variant">
+<img alt="Gejala blast leher" class="w-full h-full object-cover" data-alt="Macro photography of a rice panicle showing neck blast symptoms. The neck of the panicle is rotting and brownish-black, causing the grain head to droop. Soft, natural sunlight highlights the damage against a blurred green field background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGD-1hEL7Z4tVYnMWvpifP3XPq9BEUXSuce6umKQsfdqAWxuLUuw0OUsHNCQCOR3TEc27Aotgf7jgcuKE_ljjryOvH4aXAvewlWwC9gJ21cAewbbYkZgYZ2jiKLErNpVLafXDy-HBZ0gZZJVnk6WEJSP5d7sY8cHfVYaFIZu6EeP9gdxOaN275oB9kfTc5WSfv6eoG_S3rMkoQkboFu_CFsZo7t3u59VIlth3lxpDVgk7FziQGtdymGPwtn91nRqQ1OOySHRezROs"/>
+</div>
+<p class="font-label-md text-label-md text-on-surface text-center">Fase Lanjut (Leher)</p>
+</div>
+<!-- Gallery Item 3 -->
+<div class="min-w-[160px] snap-start flex flex-col gap-2">
+<div class="w-[160px] h-[160px] rounded-xl overflow-hidden shadow-sm border border-outline-variant bg-surface-container flex items-center justify-center">
+<span class="material-symbols-outlined text-outline text-4xl">collections</span>
+</div>
+<p class="font-label-md text-label-md text-on-surface text-center">Lihat Semua</p>
+</div>
+</div>
+</section>
+<!-- 6. Diagnostic Summary -->
+<section class="flex flex-col gap-3">
+<h2 class="font-h3 text-h3 text-primary">Kondisi Pemicu</h2>
+<div class="grid grid-cols-2 gap-3">
+<div class="bg-surface-bright rounded-xl p-4 border border-outline-variant flex flex-col items-center text-center gap-2 shadow-sm">
+<div class="w-10 h-10 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">water_drop</span>
+</div>
+<p class="font-label-md text-label-md text-on-surface font-semibold">Kelembapan</p>
+<p class="font-body-sm text-on-surface-variant">&gt; 90% (Sangat Tinggi)</p>
+</div>
+<div class="bg-surface-bright rounded-xl p-4 border border-outline-variant flex flex-col items-center text-center gap-2 shadow-sm">
+<div class="w-10 h-10 rounded-full bg-error-container text-on-error-container flex items-center justify-center">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">eco</span>
+</div>
+<p class="font-label-md text-label-md text-on-surface font-semibold">Nitrogen</p>
+<p class="font-body-sm text-on-surface-variant">Pemupukan N Berlebih</p>
+</div>
+<div class="bg-surface-bright rounded-xl p-4 border border-outline-variant flex flex-col items-center text-center gap-2 shadow-sm col-span-2 flex-row justify-start text-left">
+<div class="w-10 h-10 rounded-full bg-tertiary-container text-on-tertiary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">thermostat</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface font-semibold">Suhu Optimal Jamur</p>
+<p class="font-body-sm text-on-surface-variant">24°C - 28°C (Malam hari sejuk, siang terik)</p>
+</div>
+</div>
+</div>
+</section>
+<!-- 7. Treatment & Management Tabs -->
+<section class="flex flex-col gap-4 mt-2">
+<h2 class="font-h3 text-h3 text-primary">Penanganan &amp; Pencegahan</h2>
+<!-- Tab List (Simulated) -->
+<div class="flex p-1 bg-surface-container-low rounded-lg border border-outline-variant">
+<button class="flex-1 py-2 px-3 bg-surface rounded-md shadow-sm font-label-md text-primary font-semibold text-center transition-all">
+                        Kimiawi
+                    </button>
+<button class="flex-1 py-2 px-3 text-on-surface-variant font-label-md font-medium text-center hover:text-primary transition-all">
+                        Budidaya
+                    </button>
+<button class="flex-1 py-2 px-3 text-on-surface-variant font-label-md font-medium text-center hover:text-primary transition-all">
+                        Biologis
+                    </button>
+</div>
+<!-- Tab Content Panel -->
+<div class="bg-surface border border-outline-variant rounded-xl p-5 shadow-sm flex flex-col gap-4">
+<div class="flex items-center gap-2 border-b border-outline-variant pb-3">
+<span class="material-symbols-outlined text-primary">science</span>
+<h3 class="font-h3 text-h3 text-on-surface text-[18px]">Rekomendasi Fungisida</h3>
+</div>
+<ul class="flex flex-col gap-4">
+<li class="flex gap-3 items-start">
+<div class="w-2 h-2 rounded-full bg-primary mt-2 shrink-0"></div>
+<div>
+<p class="font-label-md text-label-md font-semibold text-on-surface">Bahan Aktif: Trisiklazol</p>
+<p class="font-body-sm text-on-surface-variant mt-1">Dosis: 1-1.5 ml/liter air. Semprotkan saat gejala awal terlihat, ulangi 7 hari kemudian jika cuaca mendukung perkembangan jamur.</p>
+</div>
+</li>
+<li class="flex gap-3 items-start">
+<div class="w-2 h-2 rounded-full bg-primary mt-2 shrink-0"></div>
+<div>
+<p class="font-label-md text-label-md font-semibold text-on-surface">Bahan Aktif: Kasugamisin</p>
+<p class="font-body-sm text-on-surface-variant mt-1">Dosis: 2 ml/liter air. Efektif untuk menghentikan penyebaran sekunder pada fase awal vegetatif.</p>
+</div>
+</li>
+</ul>
+<div class="mt-2 bg-error-container/30 border border-error-container rounded-lg p-3 flex gap-3">
+<span class="material-symbols-outlined text-error mt-0.5">warning</span>
+<p class="font-body-sm text-on-surface-variant text-[13px] leading-tight">
+                            Gunakan pestisida secara bijak sesuai anjuran pada label kemasan. Gunakan Alat Pelindung Diri (APD) saat penyemprotan.
+                        </p>
+</div>
+</div>
+</section>
+</div>
+<!-- 8. Expert Contact Floating CTA -->
+<div class="fixed bottom-0 left-0 w-full z-50 p-4 bg-surface/90 backdrop-blur-md border-t border-outline-variant md:w-[480px] md:left-1/2 md:-translate-x-1/2 pb-safe-offset">
+<button class="w-full bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md py-3.5 px-4 rounded-xl flex items-center justify-center gap-2 shadow-sm transition-colors active:scale-[0.98]">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">psychology</span>
+<span>Konsultasi Pakar</span>
+</button>
+</div>
+<!-- Spacer for fixed bottom CTA -->
+<div class="h-20 w-full"></div>
+</main>
+</body></html>

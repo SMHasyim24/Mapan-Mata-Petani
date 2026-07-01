@@ -1,0 +1,50 @@
+<?php
+
+use App\Http\Middleware\CheckRole;
+use App\Http\Middleware\HandleAppearance;
+use App\Http\Middleware\HandleInertiaRequests;
+use Illuminate\Foundation\Application;
+use Illuminate\Foundation\Configuration\Exceptions;
+use Illuminate\Foundation\Configuration\Middleware;
+use Illuminate\Http\Middleware\AddLinkHeadersForPreloadedAssets;
+use Illuminate\Http\Middleware\HandleCors;
+
+return Application::configure(basePath: dirname(__DIR__))
+    ->withRouting(
+        web: __DIR__.'/../routes/web.php',
+        api: __DIR__.'/../routes/api.php',
+        apiPrefix: '', // Empty prefix - full paths defined in routes/api.php
+        commands: __DIR__.'/../routes/console.php',
+        health: '/up',
+    )
+    ->withMiddleware(function (Middleware $middleware): void {
+        $middleware->trustProxies(at: '*');
+        $middleware->encryptCookies(except: ['appearance', 'sidebar_state']);
+
+        $middleware->web(append: [
+            HandleAppearance::class,
+            HandleInertiaRequests::class,
+            AddLinkHeadersForPreloadedAssets::class,
+        ]);
+
+        // CORS for API routes
+        $middleware->api(prepend: [
+            HandleCors::class,
+        ], append: [
+            \App\Http\Middleware\IdempotencyMiddleware::class,
+        ]);
+
+        $middleware->alias([
+            'role' => CheckRole::class,
+            'app.secret' => \App\Http\Middleware\VerifyAppSecret::class,
+        ]);
+    })
+    ->withExceptions(function (Exceptions $exceptions): void {
+        $exceptions->renderable(function (\Illuminate\Auth\AuthenticationException $e, $request) {
+            \Illuminate\Support\Facades\Log::error('Unauthenticated Request:', [
+                'url' => $request->fullUrl(),
+                'headers' => $request->headers->all(),
+                'bearer_token' => $request->bearerToken(),
+            ]);
+        });
+    })->create();

@@ -1,0 +1,9 @@
+tensorflow==2.15.0
+# tensorflowjs==4.17.0 (Tidak support Windows secara langsung)
+numpy
+Pillow
+matplotlib
+seaborn
+scikit-learn
+kagglehub
+opencv-python>=4.8.0

@@ -1,0 +1,68 @@
+/.phpunit.cache
+/bootstrap/ssr
+/node_modules
+/public/build
+/public/hot
+/public/storage
+/storage/*.key
+/storage/pail
+/resources/js/actions
+/resources/js/routes
+/resources/js/wayfinder
+/vendor
+.DS_Store
+.env
+.env.backup
+.env.production
+/database/*.sqlite
+/database/*.sqlite-journal
+
+# Firebase & Rahasia
+*firebase-adminsdk*.json
+firebase-auth.json
+google-services.json
+.phpactor.json
+.phpunit.result.cache
+Homestead.json
+Homestead.yaml
+npm-debug.log
+yarn-error.log
+/auth.json
+/.fleet
+/.idea
+/.nova
+/.vscode
+/.zed
+
+# Python
+venv/
+ml/venv/
+__pycache__/
+*.pyc
+
+# ML files
+ml/model/
+ml/dataset/
+ml/dataset_split/
+ml/test/
+ml/val/
+ml/smartfarmingimage/
+ml/label_progress.json
+
+# ML model files (large binary)
+/public/models/rice-disease/*.bin
+/public/models/rice-disease/*.onnx
+
+# Ruflo / Swarm
+.swarm/
+.ruflo/
+.claude-flow/
+ruvector.db
+.
+
+# Temporary files
+*.log
+/tmp/
+cleanup.sh
+ANALYSIS.md
+RUN.md

@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+
+<html class="light" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary-container": "#6cf8bb",
+                    "on-secondary-container": "#00714d",
+                    "on-tertiary-fixed": "#410004",
+                    "tertiary": "#9b3e3b",
+                    "muted": "#64748b",
+                    "inverse-on-surface": "#ecf2ec",
+                    "chart-primary": "#059669",
+                    "surface-container-highest": "#dee4de",
+                    "primary-container": "#00855d",
+                    "outline": "#6d7a72",
+                    "primary-fixed-dim": "#68dba9",
+                    "tertiary-fixed-dim": "#ffb3ae",
+                    "surface-bright": "#f5fbf5",
+                    "on-surface": "#171d19",
+                    "on-primary-fixed": "#002114",
+                    "tertiary-container": "#ba5551",
+                    "secondary": "#006c49",
+                    "secondary-fixed": "#6ffbbe",
+                    "on-tertiary": "#ffffff",
+                    "error": "#ba1a1a",
+                    "on-tertiary-fixed-variant": "#7f2928",
+                    "surface-tint": "#006c4a",
+                    "on-secondary-fixed-variant": "#005236",
+                    "background": "#f8fafc",
+                    "inverse-surface": "#2c322e",
+                    "on-tertiary-container": "#fffbff",
+                    "chart-secondary": "#34d399",
+                    "surface-container-low": "#eff5ef",
+                    "on-primary": "#ffffff",
+                    "surface-container-high": "#e4eae4",
+                    "surface": "#ffffff",
+                    "tertiary-fixed": "#ffdad7",
+                    "surface-container": "#e9efe9",
+                    "border": "#e2e8f0",
+                    "destructive": "#dc2626",
+                    "on-primary-fixed-variant": "#005137",
+                    "secondary-fixed-dim": "#4edea3",
+                    "primary": "#006948",
+                    "on-secondary-fixed": "#002113",
+                    "on-primary-container": "#f5fff7",
+                    "on-background": "#171d19",
+                    "surface-dim": "#d5dcd6",
+                    "surface-variant": "#dee4de",
+                    "primary-fixed": "#85f8c4",
+                    "error-container": "#ffdad6",
+                    "on-error": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "outline-variant": "#bccac0",
+                    "surface-container-lowest": "#ffffff",
+                    "inverse-primary": "#68dba9",
+                    "on-secondary": "#ffffff",
+                    "on-surface-variant": "#3d4a42"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "sidebar-width": "280px",
+                    "stack-lg": "2rem",
+                    "container-max": "1440px",
+                    "gutter": "1.5rem",
+                    "stack-md": "1rem",
+                    "margin-page": "2rem",
+                    "stack-sm": "0.5rem"
+            },
+            "fontFamily": {
+                    "h3": ["Manrope"],
+                    "body-base": ["Inter"],
+                    "label-md": ["Inter"],
+                    "h2": ["Manrope"],
+                    "body-sm": ["Inter"],
+                    "label-xs": ["Inter"],
+                    "h1": ["Manrope"]
+            },
+            "fontSize": {
+                    "h3": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "body-base": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "fontWeight": "500"}],
+                    "h2": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "label-xs": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "h1": ["30px", {"lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body-base">
+<!-- TopAppBar -->
+<header class="bg-surface dark:bg-surface-container text-primary dark:text-primary-fixed-dim docked full-width top-0 border-b border-outline-variant dark:border-outline shadow-sm flex justify-between items-center px-gutter py-stack-md w-full sticky top-0 z-50">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full overflow-hidden border border-outline-variant">
+<img alt="User profile photo" class="w-full h-full object-cover" data-alt="A professional close-up portrait of a Southeast Asian agricultural specialist wearing a clean white lab coat, standing in a bright, modern glass greenhouse. The lighting is natural and soft, emphasizing a trustworthy and expert persona. The background features lush green paddy plants blurred artistically, maintaining a clean and professional corporate aesthetic consistent with a high-end agricultural application." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCj1n_3AZ8oZzqWAIcxbm0VDG4yCKwHKFCPe-TEmUo_ZX6tD6B_gzlGu9QzROCWeQ3vWozgxnKD3W70t192HWdzNkPeg7nd0hmbsTbUgFMgdhHbRlsFC_CRU5anmPhIRIiORCNw2pxKLyW27pNvgw3CokilZmzz5GggwYL6a8a89g9g1biEFa-vIK3RGtwbw3Tq-h34MrYkgw0yQFZnkQV6nkHSjVDR5KKkt--Sp6zQGtitMW1lZ4zFg4-rCM9b73maBdwWMiErEMg"/>
+</div>
+<h1 class="font-h1 text-h1 text-primary dark:text-primary-fixed-dim">Mapan</h1>
+</div>
+<button class="p-2 rounded-full hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-colors active:scale-95 transition-all duration-200">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+</header>
+<main class="max-w-[600px] mx-auto pb-32">
+<!-- Hero Section & Instructions -->
+<section class="px-gutter pt-8 pb-6">
+<h2 class="font-h2 text-h2 text-on-surface mb-2">Sistem Pakar</h2>
+<p class="text-on-surface-variant font-body-base">Identifikasi penyakit tanaman padi Anda dengan memilih gejala yang terlihat di lapangan untuk diagnosa akurat.</p>
+</section>
+<!-- Search & Filter Symptoms -->
+<section class="px-gutter mb-6">
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="w-full pl-12 pr-4 py-3 bg-surface border border-outline-variant rounded-xl focus:ring-2 focus:ring-primary focus:border-primary transition-all outline-none font-body-base" placeholder="Cari gejala (misal: daun, batang...)" type="text"/>
+</div>
+</section>
+<!-- Symptoms List -->
+<section class="px-gutter space-y-3 mb-8">
+<label class="flex items-center p-4 bg-surface border border-border rounded-xl cursor-pointer hover:border-primary transition-colors group">
+<input class="w-6 h-6 rounded border-outline-variant text-primary focus:ring-primary mr-4" type="checkbox"/>
+<div class="flex-1">
+<span class="font-body-base text-on-surface group-hover:text-primary transition-colors">Daun menguning mulai dari ujung</span>
+<p class="text-label-xs text-muted">Gejala umum pada defisiensi nutrisi atau virus</p>
+</div>
+</label>
+<label class="flex items-center p-4 bg-surface border border-border rounded-xl cursor-pointer hover:border-primary transition-colors group">
+<input checked="" class="w-6 h-6 rounded border-outline-variant text-primary focus:ring-primary mr-4" type="checkbox"/>
+<div class="flex-1">
+<span class="font-body-base text-on-surface group-hover:text-primary transition-colors">Bercak coklat belah ketupat</span>
+<p class="text-label-xs text-muted">Khas pada daun yang terinfeksi jamur</p>
+</div>
+</label>
+<label class="flex items-center p-4 bg-surface border border-border rounded-xl cursor-pointer hover:border-primary transition-colors group">
+<input checked="" class="w-6 h-6 rounded border-outline-variant text-primary focus:ring-primary mr-4" type="checkbox"/>
+<div class="flex-1">
+<span class="font-body-base text-on-surface group-hover:text-primary transition-colors">Butir padi hampa (Puso)</span>
+<p class="text-label-xs text-muted">Malai tidak berisi atau berwarna putih</p>
+</div>
+</label>
+<label class="flex items-center p-4 bg-surface border border-border rounded-xl cursor-pointer hover:border-primary transition-colors group">
+<input class="w-6 h-6 rounded border-outline-variant text-primary focus:ring-primary mr-4" type="checkbox"/>
+<div class="flex-1">
+<span class="font-body-base text-on-surface group-hover:text-primary transition-colors">Batang membusuk dan berbau</span>
+<p class="text-label-xs text-muted">Indikasi infeksi bakteri pada pangkal batang</p>
+</div>
+</label>
+</section>
+<!-- Diagnosis Results (Visible State Mockup) -->
+<section class="px-gutter mb-8">
+<div class="bg-primary-container/10 border border-primary-container rounded-2xl p-6 overflow-hidden relative">
+<div class="flex justify-between items-start mb-4">
+<div>
+<span class="inline-block px-3 py-1 bg-primary text-on-primary text-label-xs rounded-full mb-2">Hasil Diagnosa</span>
+<h3 class="font-h2 text-h2 text-primary">Penyakit Blast (95%)</h3>
+</div>
+<div class="bg-primary text-on-primary rounded-full p-2">
+<span class="material-symbols-outlined text-[32px]" style="font-variation-settings: 'FILL' 1;">biotech</span>
+</div>
+</div>
+<p class="text-on-surface-variant font-body-base mb-6">
+                    Berdasarkan gejala bercak coklat belah ketupat dan butir padi hampa, sistem mengidentifikasi adanya infeksi jamur <i>Magnaporthe oryzae</i> dengan tingkat kepastian tinggi.
+                </p>
+<div class="space-y-4">
+<h4 class="font-label-md text-primary flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">assignment_turned_in</span>
+                        Rekomendasi Tindakan Segera:
+                    </h4>
+<ul class="space-y-3">
+<li class="flex items-start gap-3">
+<span class="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0"></span>
+<span class="text-body-sm text-on-surface">Gunakan fungisida berbahan aktif trisiklazol atau tebukonazol sesuai dosis.</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0"></span>
+<span class="text-body-sm text-on-surface">Kurangi penggunaan pupuk nitrogen berlebih untuk sementara waktu.</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0"></span>
+<span class="text-body-sm text-on-surface">Atur pengairan sawah (intermittent irrigation) untuk mengurangi kelembapan.</span>
+</li>
+</ul>
+</div>
+<!-- Background decorative element -->
+<div class="absolute -right-8 -bottom-8 opacity-10">
+<span class="material-symbols-outlined text-[120px]">potted_plant</span>
+</div>
+</div>
+</section>
+<!-- CTA Action -->
+<div class="px-gutter fixed bottom-24 left-0 w-full max-w-[600px] left-1/2 -translate-x-1/2">
+<button class="w-full bg-primary hover:bg-primary-container text-on-primary font-h3 py-4 rounded-xl shadow-lg active:scale-[0.98] transition-all flex items-center justify-center gap-3">
+<span class="material-symbols-outlined">analytics</span>
+                Diagnosa Sekarang
+            </button>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center bg-surface dark:bg-surface-container px-2 pb-safe pt-2 md:hidden border-t border-outline-variant dark:border-outline shadow-lg">
+<!-- Home -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-4 py-1 hover:text-primary dark:hover:text-primary-fixed-dim active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-label-md text-label-md">Home</span>
+</a>
+<!-- Detection -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-4 py-1 hover:text-primary dark:hover:text-primary-fixed-dim active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="center_focus_strong">center_focus_strong</span>
+<span class="font-label-md text-label-md">Detection</span>
+</a>
+<!-- Expert (Active) -->
+<a class="flex flex-col items-center justify-center bg-secondary-container dark:bg-secondary text-on-secondary-container dark:text-on-secondary rounded-full px-4 py-1 active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="psychology" style="font-variation-settings: 'FILL' 1;">psychology</span>
+<span class="font-label-md text-label-md">Expert</span>
+</a>
+<!-- Profile -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-4 py-1 hover:text-primary dark:hover:text-primary-fixed-dim active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-label-md text-label-md">Profile</span>
+</a>
+</nav>
+<!-- Desktop Sidebar (NavigationDrawer) -->
+<aside class="hidden md:flex flex-col h-full p-stack-md gap-stack-sm sticky left-0 top-0 overflow-y-auto bg-surface-container-low dark:bg-surface-container-lowest h-full w-sidebar-width fixed left-0 top-0 border-r border-outline-variant dark:border-outline flat no shadows">
+<div class="mb-8 flex flex-col gap-2">
+<h2 class="font-h2 text-h2 text-primary px-2">Mapan</h2>
+<div class="flex items-center gap-3 p-3 bg-surface rounded-xl border border-border">
+<img alt="Expert User" class="w-10 h-10 rounded-full object-cover" data-alt="A portrait of a highly focused female agricultural researcher in a modern laboratory setting. She is wearing professional glasses and a white lab coat. The atmosphere is crisp and brightly lit with cool daylight, featuring high-tech equipment like microscopes and petri dishes in the soft-focus background, reflecting a professional scientific environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1GsnJCdBG-v1Gd3GF9HGXsO2h5BeatnpplyPJC_U_xtC4HuhP2NyCSqpNvlBqvLk8WgghmY7tSw2qfGIuingVQc9EL94o-E8I4x13Rrg9xJGOK7sm0UaVuwuEIGpYsFuvkQeiYKSkzFdSWONt_cEhUeRuFtAFcpGDu2ZyVMN5T9rfn-SyeySVLGh9ASWTOp7j30Se5QewNCDtnu2GEaKsKCDUh6Q-FRoVw0LNzPO2jGrBBJC6BsiQA7Kl5IXuHPdfok3V4lXYiY4"/>
+<div class="overflow-hidden">
+<p class="font-label-md text-on-surface truncate">Expert User</p>
+<p class="text-label-xs text-muted truncate">Plant Pathologist</p>
+</div>
+</div>
+</div>
+<nav class="flex flex-col gap-1">
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-outline-variant hover:bg-surface-container-high dark:hover:bg-surface-container-highest rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-body-base">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-outline-variant hover:bg-surface-container-high dark:hover:bg-surface-container-highest rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">history</span>
+<span class="font-body-base">Detection History</span>
+</a>
+<!-- Active State -->
+<a class="flex items-center gap-3 px-4 py-3 bg-secondary-container dark:bg-secondary text-on-secondary-container dark:text-on-secondary font-bold rounded-lg active:translate-x-1 transition-transform" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">biotech</span>
+<span class="font-body-base">Expert System</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-outline-variant hover:bg-surface-container-high dark:hover:bg-surface-container-highest rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">potted_plant</span>
+<span class="font-body-base">Field Reports</span>
+</a>
+<div class="mt-8 border-t border-outline-variant pt-4">
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-outline-variant hover:bg-surface-container-high dark:hover:bg-surface-container-highest rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-body-base">Settings</span>
+</a>
+</div>
+</nav>
+</aside>
+</body></html>
