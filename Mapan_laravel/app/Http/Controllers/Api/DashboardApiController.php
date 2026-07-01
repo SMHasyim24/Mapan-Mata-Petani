@@ -30,8 +30,7 @@ class DashboardApiController extends Controller
         $totalDetections = (clone $baseQuery)->count();
 
         $detectionsThisMonth = (clone $baseQuery)
-            ->whereMonth('created_at', now()->month)
-            ->whereYear('created_at', now()->year)
+            ->where('created_at', '>=', now()->subDays(7))
             ->count();
 
         $averageConfidence = (clone $baseQuery)
